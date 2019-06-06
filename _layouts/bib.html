@@ -1,0 +1,45 @@
+---
+---
+{% comment %}
+    this file controls the invidual HTML pages generated for
+    each bibliography entry (e.g., Alice03a.html)
+{% endcomment %}
+
+<p>
+{{ page.entry.title }} <br>
+<strong>{{ page.entry.author }}</strong> <br>
+<em>{{ page.entry.myorganization }}</em>
+</p>
+
+<h2>citation</h2>
+<p>
+{% comment %}
+    for consistency across the website, this should match the same style as
+    in `_layouts/bib_reference.html' (with some syntax changes).
+{% endcomment %}
+{% reference page.entry.key %}
+{% if page.entry.doi %}[<a href="{{ page.entry.doi }}">DOI</a>]{% endif %}
+{% if page.entry.pdfurl %}[<a href="{{ page.entry.pdfurl }}">PDF</a>]{% endif %}
+{% if page.entry.codeurl %}[<a href="{{ page.entry.codeurl }}">Code</a>]{% endif %}
+{% if page.entry.dataseturl %}[<a href="{{ page.entry.dataseturl }}">Dataset</a>]{% endif %}
+</p>
+
+{% if page.entry.abstract %}
+<h2>abstract</h2>
+<p>
+{{ page.entry.abstract }}
+</p>
+{% endif %}
+
+<h2>reference</h2>
+
+<pre>{{ page.entry.bibtex }}</pre>
+
+{% if page.entry.copyrightterms %}
+<h2>copyright</h2>
+<p>
+{{ page.entry.copyrightterms }}
+</p>
+{% endif %}
+{% comment %}
+{% endcomment %}

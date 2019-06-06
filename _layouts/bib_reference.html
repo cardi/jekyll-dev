@@ -1,0 +1,20 @@
+---
+---
+{% comment %}
+    this file controls what a reference entry looks like, for example:
+
+    Genevieve Bartlett, John Heidemann and Christos Papadopoulos 2006. Inherent
+    Behaviors for On-line Detection of Peer-to-Peer File Sharing (extended).
+    Technical Report ISI-TR-2006-627. USC/Information Sciences Institute.
+    [PDF] [Details]
+
+    if you change this style, please ensure the changes are reflected
+    in `_layouts/bib.html' as well.
+{% endcomment %}
+{{ reference }}
+{%- comment -%}
+{% if entry.doi %}[<a href="{{ entry.doi }}">DOI</a>]{% endif %}
+{% if entry.pdfurl %}[<a href="{{ entry.pdfurl }}">PDF</a>]{% endif %}
+{% if entry.codeurl %}[<a href="{{ entry.codeurl }}">Code</a>]{% endif %}
+{% if entry.dataseturl %}[<a href="{{ entry.dataseturl }}">Dataset</a>]{% endif %}
+{%- endcomment -%}

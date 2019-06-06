@@ -1,0 +1,38 @@
+name        : Test
+url         : .
+description : Test
+email       : test@example.com
+
+#kramdown:
+#    smart_quotes: ["apos", "apos", "quot", "quot"]
+
+plugins:
+- jekyll/scholar
+
+exclude: []
+
+keep_files: []
+#- .lol
+#- .lol/*
+
+scholar:
+  style                 : _bib/acm-sig-proceedings-long-author-list.csl
+  locale                : en
+
+  sort_by               : sortdate
+  order                 : descending
+
+  source                : _bib
+  bibliography          : references.bib.orig
+  bibliography_template : bib_reference # _layouts/bib_reference.html
+  bibliography_list_tag : ul
+
+  replace_strings       : true
+  join_strings          : true
+
+  details_dir           : bib
+  details_layout        : bib.html
+  details_link          : Details
+
+# query                 : "@*"
+  query                 : "@*[year >= 2019]"
