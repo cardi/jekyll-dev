@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = /Users/developer/local/jekyll-dev/vendor/bundle/ruby/2.6.0/cache/bundler/git/jekyll-da4bec5a5fdcc7290fe01358a8965e4db369b2d2
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
