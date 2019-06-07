@@ -1,38 +1,136 @@
-name        : Test
-url         : .
-description : Test
-email       : test@example.com
-
-#kramdown:
-#    smart_quotes: ["apos", "apos", "quot", "quot"]
-
+---
+source: "/Users/mike/code/jekyll-dev"
+destination: "/Users/mike/code/jekyll-dev/_site"
+collections_dir: ''
+cache_dir: ".jekyll-cache"
+plugins_dir: _plugins
+layouts_dir: _layouts
+data_dir: _data
+includes_dir: _includes
+collections:
+  posts:
+    output: true
+    permalink: "/:categories/:year/:month/:day/:title:output_ext"
+safe: false
+include:
+- ".htaccess"
+exclude:
+- ".sass-cache"
+- ".jekyll-cache"
+- gemfiles
+- Gemfile
+- Gemfile.lock
+- node_modules
+- vendor/bundle/
+- vendor/cache/
+- vendor/gems/
+- vendor/ruby/
+keep_files: []
+encoding: utf-8
+markdown_ext: markdown,mkdown,mkdn,mkd,md
+strict_front_matter: false
+show_drafts: 
+limit_posts: 0
+future: false
+unpublished: false
+whitelist: []
 plugins:
 - jekyll/scholar
-
-exclude: []
-
-keep_files: []
-#- .lol
-#- .lol/*
-
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+detach: false
+port: '4000'
+host: 127.0.0.1
+baseurl: 
+show_dir_listing: false
+permalink: date
+paginate_path: "/page:num"
+timezone: 
+quiet: false
+verbose: false
+defaults: []
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+kramdown:
+  auto_ids: true
+  toc_levels: 1..6
+  entity_output: as_char
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM
+  hard_wrap: false
+  guess_lang: true
+  footnote_nr: 1
+  show_warnings: false
+name: Test
+url: "."
+description: Test
+email: test@example.com
 scholar:
-  style                 : _bib/acm-sig-proceedings-long-author-list.csl
-  locale                : en
-
-  sort_by               : sortdate
-  order                 : descending
-
-  source                : _bib
-  bibliography          : references.bib.orig
-  bibliography_template : bib_reference # _layouts/bib_reference.html
-  bibliography_list_tag : ul
-
-  replace_strings       : true
-  join_strings          : true
-
-  details_dir           : bib
-  details_layout        : bib.html
-  details_link          : Details
-
-# query                 : "@*"
-  query                 : "@*[year >= 2019]"
+  style: _bib/acm-sig-proceedings-long-author-list.csl
+  locale: en
+  sort_by: sortdate
+  order: descending
+  group_by: none
+  group_order: ascending
+  bibliography_group_tag: h2,h3,h4,h5
+  bibliography_list_tag: ul
+  bibliography_item_tag: li
+  bibliography_list_attributes: {}
+  bibliography_item_attributes: {}
+  source: _bib
+  bibliography: references.bib.orig
+  repository: 
+  repository_file_delimiter: "."
+  bibtex_options:
+    strip: false
+    parse_months: true
+  bibtex_filters:
+  - smallcaps
+  - superscript
+  - italics
+  - latex
+  bibtex_skip_fields:
+  - abstract
+  - month_numeric
+  bibtex_quotes:
+  - "{"
+  - "}"
+  replace_strings: true
+  join_strings: true
+  details_dir: bib
+  details_layout: bib.html
+  details_link: Details
+  use_raw_bibtex_entry: true
+  bibliography_class: bibliography
+  bibliography_template: bib_reference
+  reference_tagname: span
+  missing_reference: "(missing reference)"
+  details_link_class: details
+  query: "@*[year >= 2019]"
+  cite_class: citation
+  type_names:
+    article: Journal Articles
+    book: Books
+    incollection: Book Chapters
+    inproceedings: Conference Articles
+    thesis: Theses
+    mastersthesis: Master's Theses
+    phdthesis: PhD Theses
+    manual: Manuals
+    techreport: Technical Reports
+    misc: Miscellaneous
+    unpublished: Unpublished
+  type_aliases:
+    phdthesis: thesis
+    mastersthesis: thesis
+  type_order: []
+  month_names: 
+profile: true
+config:
+- _config.yml
+serving: false
